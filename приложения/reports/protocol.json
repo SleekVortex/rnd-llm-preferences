@@ -1,0 +1,22 @@
+{
+  "group_key": "sha256(NFKC(first prompt), casefold, collapsed whitespace)",
+  "train_rows": 45861,
+  "validation_rows": 11616,
+  "train_groups": 40194,
+  "validation_groups": 10200,
+  "group_overlap": 0,
+  "naive_stratified_split_overlap_groups": 1413,
+  "naive_validation_rows_with_train_prompt": 1918,
+  "class_counts": {
+    "train": {
+      "A": 15976,
+      "B": 15722,
+      "tie": 14163
+    },
+    "validation": {
+      "A": 4088,
+      "B": 3930,
+      "tie": 3598
+    }
+  }
+}

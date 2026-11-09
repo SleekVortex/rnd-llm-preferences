@@ -1,0 +1,79 @@
+{
+  "config": {
+    "source": {
+      "repo": "lmarena-ai/arena-human-preference-55k",
+      "revision": "18c298340948c0e7f7727399fd459cca6ce0ca6f",
+      "filename": "train.csv",
+      "sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+      "rows": 57477
+    },
+    "split": {
+      "seed": 42,
+      "n_splits": 5,
+      "fold": 0
+    },
+    "tfidf": {
+      "max_features": 20000,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 3,
+      "sublinear_tf": true,
+      "lowercase": true,
+      "norm": "l2"
+    },
+    "classifier": {
+      "C": 1.0,
+      "solver": "lbfgs",
+      "max_iter": 500,
+      "tol": 0.0001
+    },
+    "bootstrap": {
+      "seed": 43,
+      "resamples": 1000
+    }
+  },
+  "feature_count": 60000,
+  "prepared_files": {
+    "train.npz": "16e5764affecbcb9c4be753b979b6a806d738e76da510919f8c9d10a8c71ac24",
+    "train.csv": "5be35b124ca509f74d3cf2cdec931214edba292eb01079af5bcd6fbd77823da1",
+    "validation.npz": "f4cb7d130c818de61ef898d5a171e6d058a4f8b9dda3272b6647f24240ac1e81",
+    "validation.csv": "db77c1b611674624d8f20b8024490c67ba82fbffe2462e8dae13f21000bbbb32"
+  },
+  "preparation_environment": {
+    "python": "3.11.13",
+    "platform": "Linux-5.4.0-99-generic-x86_64-with-glibc2.31",
+    "packages": {
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.15.3",
+      "scikit-learn": "1.7.2"
+    }
+  },
+  "preparation_seconds": 103.17340989410877,
+  "training": {
+    "training_seconds": 20.83915720897494,
+    "iterations": [
+      182
+    ],
+    "converged": true,
+    "priors": [
+      0.34835699177950763,
+      0.3428185168225726,
+      0.3088244913979198
+    ],
+    "environment": {
+      "python": "3.11.9",
+      "platform": "macOS-26.6-arm64-arm-64bit",
+      "packages": {
+        "numpy": "2.2.6",
+        "pandas": "2.3.3",
+        "scipy": "1.15.3",
+        "scikit-learn": "1.7.2"
+      }
+    },
+    "manifest_sha256": "a5cbf3916839cd7565f5bdfa31faa2d07b2986ca779034ae7e76dd3c28a0613e"
+  },
+  "long_response_cutoff_chars": 3532.0
+}
