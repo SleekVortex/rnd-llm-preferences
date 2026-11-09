@@ -1,0 +1,74 @@
+{
+  "baseline": {
+    "log_loss": 1.1294735510028506,
+    "accuracy": 0.43173209366391185,
+    "macro_f1": 0.4281453432899656,
+    "brier_multiclass": 0.6763507711225984
+  },
+  "prior": {
+    "log_loss": 1.0972599581176228,
+    "accuracy": 0.35192837465564736,
+    "macro_f1": 0.17354389539820003,
+    "brier_multiclass": 0.6657733400452919
+  },
+  "uniform": {
+    "log_loss": 1.0986122886681096,
+    "accuracy": 0.35192837465564736,
+    "macro_f1": 0.17354389539820003,
+    "brier_multiclass": 0.6666666666666666
+  },
+  "training_baseline": {
+    "log_loss": 0.5941027432390874,
+    "accuracy": 0.8669675759359805,
+    "macro_f1": 0.8664340545769482,
+    "brier_multiclass": 0.32064036199118257
+  },
+  "bootstrap": {
+    "resamples": 1000,
+    "seed": 43,
+    "unit": "first_prompt_group",
+    "log_loss_95_percentile_interval": [
+      1.1173390032385984,
+      1.1413602265069962
+    ],
+    "delta_vs_prior_95_percentile_interval": [
+      0.01992221729974789,
+      0.043840759547120925
+    ],
+    "delta_vs_prior": 0.03221359288522756
+  },
+  "confusion_matrix": [
+    [
+      1947,
+      1187,
+      954
+    ],
+    [
+      1140,
+      1806,
+      984
+    ],
+    [
+      1189,
+      1147,
+      1262
+    ]
+  ],
+  "classes": [
+    "A",
+    "B",
+    "tie"
+  ],
+  "environment": {
+    "python": "3.11.9",
+    "platform": "macOS-26.6-arm64-arm-64bit",
+    "packages": {
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.15.3",
+      "scikit-learn": "1.7.2"
+    }
+  },
+  "manifest_sha256": "a5cbf3916839cd7565f5bdfa31faa2d07b2986ca779034ae7e76dd3c28a0613e",
+  "model_sha256": "6f0c8f5f653491fbcde441c16c7b9fb75a52994d548ccfc4b4868f0091e0f617"
+}

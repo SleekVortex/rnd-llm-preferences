@@ -1,0 +1,57 @@
+{
+  "rows": 57477,
+  "csv_empty_cells": {
+    "id": 0,
+    "prompt": 0,
+    "response_a": 0,
+    "response_b": 0,
+    "winner_model_a": 0,
+    "winner_model_b": 0,
+    "winner_tie": 0
+  },
+  "null_turns": {
+    "prompt": 0,
+    "response_a": 120,
+    "response_b": 126
+  },
+  "empty_turns_after_null_replacement": {
+    "prompt": 5,
+    "response_a": 151,
+    "response_b": 161
+  },
+  "class_counts": {
+    "A": 20064,
+    "B": 19652,
+    "tie": 17761
+  },
+  "unique_first_prompts": 50394,
+  "rows_in_repeated_prompt_groups": 10613,
+  "max_prompt_group_size": 200,
+  "multi_turn_rows": 7539,
+  "code_fence_rows": 6848,
+  "identical_response_rows": 275,
+  "identical_response_non_tie_rows": 27,
+  "lengths_characters": {
+    "prompt": {
+      "0": 3.0,
+      "0.5": 91.0,
+      "0.9": 758.0,
+      "0.99": 4698.5999999999185,
+      "1": 32833.0
+    },
+    "response_a": {
+      "0": 0.0,
+      "0.5": 1036.0,
+      "0.9": 2703.0,
+      "0.99": 6783.719999999994,
+      "1": 53299.0
+    },
+    "response_b": {
+      "0": 0.0,
+      "0.5": 1044.0,
+      "0.9": 2695.0,
+      "0.99": 6736.239999999998,
+      "1": 52402.0
+    }
+  }
+}
