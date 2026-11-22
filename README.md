@@ -4,7 +4,33 @@
 
 По запросу и двум ответам предсказываем выбор человека. Классы A, B и ничья. Основная метрика log loss, как в [соревновании Kaggle](https://www.kaggle.com/competitions/llm-classification-finetuning/overview/evaluation). Меньше лучше.
 
-## ДЗ2
+## Лучший результат ДЗ2
+
+Пока выбираем **Qwen3-4B с LoRA**. На 717 отложенных парах у нее log loss 1,0009 и accuracy 53,1%. Полный файнтюн 1.7B почти сравнялся по log loss (1,0012). У 4B обучали 5,9 млн параметров, две эпохи, lr 0,00015, эффективный батч 64. [Настройки запуска](experiments/reports/hw2/qwen/large_lora.json)
+
+
+## Запуск
+
+Команды для Python 3.11 из корня репозитория.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt jupyterlab
+jupyter lab
+```
+
+Для пересчета таблиц и графиков выполните в каждом ноутбуке ячейки до заголовка «Повтор эксперимента». Хватит CPU и сохраненных прогнозов.
+
+Для обучения положите train.csv в корень репозитория. Выполните разделы «Повтор эксперимента» по порядку, с первого ноутбука по третий. Нужна GPU с CUDA. Затем пересчитайте таблицы. [Скачать данные](https://huggingface.co/datasets/lmarena-ai/arena-human-preference-55k/tree/18c298340948c0e7f7727399fd459cca6ce0ca6f)
+
+Открыть журнал запусков из второго терминала можно командой
+
+```bash
+.venv/bin/mlflow ui --backend-store-uri sqlite:///mlflow.db
+```
+
+## Эксперименты ДЗ2
 
 В основном сравнении у всех моделей одни и те же 5352 обучающие и 717 отложенных пар. Внутри train оставили 1070 пар для выбора скорости обучения и числа эпох. У TF-IDF весь текст, у Qwen до 96 токенов запроса и по 192 токена каждого ответа.
 
@@ -15,7 +41,7 @@
 | Qwen3-4B + LoRA | 1,0009 | 53,1% |
 | Qwen3-1.7B, полный файнтюн | 1,0012 | 50,3% |
 
-4B с LoRA и полный файнтюн 1.7B обошли TF-IDF с поправкой на шесть сравнений. Между ними 0,00035 по log loss. Для 1.7B с LoRA интервал разницы с TF-IDF включает ноль. [Парные интервалы](приложения/reports/hw2-qwen/differences.csv) · [Кривые обучения](приложения/reports/hw2-qwen/curves.png)
+4B с LoRA и полный файнтюн 1.7B обошли TF-IDF с поправкой на шесть сравнений. Между ними 0,00035 по log loss. Для 1.7B с LoRA интервал разницы с TF-IDF включает ноль. [Парные интервалы](experiments/reports/hw2/qwen/differences.csv) · [Кривые обучения](experiments/reports/hw2/qwen/curves.png)
 
 | Ноутбук | Что проверили | Результат |
 |---|---|---|
@@ -23,15 +49,9 @@
 | [2. Готовые модели](hw2_2_judges.ipynb) | PairJudge, PandaLM и ArenaJudge. Две абляции на одних 512 парах | PairJudge получил 1,0661, TF-IDF 1,0177. ArenaJudge мог видеть эти пары при обучении |
 | [3. LoRA и полный файнтюн](hw2_3_finetuning.ipynb) | PairJudge до и после LoRA на 512 парах. Три Qwen против TF-IDF на 717 парах | LoRA улучшила PairJudge до 1,0321. Результаты Qwen в таблице выше |
 
-В двух абляциях убирали из смеси по одной модели. Без PairJudge log loss вырос на 0,0221. Без BERT он изменился на 0,0008, интервал включает ноль. [Таблица абляций](приложения/reports/hw2/differences.csv)
+В двух абляциях убирали из смеси по одной модели. Без PairJudge log loss вырос на 0,0221. Без BERT он изменился на 0,0008, интервал включает ноль. [Таблица абляций](experiments/reports/hw2/bert_judges/differences.csv)
 
-## Запуск
-
-1. Установите зависимости для отчетов командой `python -m pip install -r requirements.txt jupyterlab`.
-2. Запустите `jupyter lab` из корня репозитория. В каждом из трех ноутбуков выполните ячейки до раздела «Повтор эксперимента». Таблицы и графики считаются из сохраненных прогнозов. Датасет и GPU для этого не нужны.
-3. Для повторного обучения положите рядом [train.csv](https://huggingface.co/datasets/lmarena-ai/arena-human-preference-55k/tree/18c298340948c0e7f7727399fd459cca6ce0ca6f). Подготовьте выборку в первом ноутбуке. Полный прогон выполняйте по номерам, обучение требует CUDA. После него пересчитайте отчеты. Для просмотра MLflow выполните `mlflow ui --backend-store-uri sqlite:///mlflow.db`.
-
-[Условия ДЗ2](https://github.com/PikaChuChuMF/RnD-ML-Course-2026-2/blob/main/HW_2/HomeWork_2.md) · [Прогнозы и настройки](приложения/reports/README.md)
+[Условия ДЗ2](https://github.com/PikaChuChuMF/RnD-ML-Course-2026-2/blob/main/HW_2/HomeWork_2.md) · [Прогнозы и настройки](experiments/reports/README.md)
 
 При пересчете MLflow создает новую запись. ID исходных прогонов лежат в tracking.json рядом с метриками.
 

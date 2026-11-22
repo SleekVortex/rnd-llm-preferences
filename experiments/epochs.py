@@ -13,7 +13,7 @@ from peft import LoraConfig, get_peft_model
 
 
 bundle = Path("artifacts/hw2-input")
-reports = Path("приложения/reports/hw2-extra")
+reports = Path("experiments/reports/hw2/encoder_pairjudge_tuning")
 sources = {
     "mbert": ("google-bert/bert-base-multilingual-cased", "3f076fdb1ab68d5b2880cb87a0886f315b8146f8"),
     "roberta": ("FacebookAI/roberta-large", "722cf37b1afa9454edce342e7895e588b6ff1d59"),
