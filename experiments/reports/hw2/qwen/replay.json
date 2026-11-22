@@ -1,0 +1,17 @@
+{
+  "small_lora": {
+    "rows": 1229,
+    "max_abs_probability_diff": 9.71445146547012e-17,
+    "changed_predictions": 0
+  },
+  "large_lora": {
+    "rows": 1229,
+    "max_abs_probability_diff": 1.1102230246251565e-16,
+    "changed_predictions": 0
+  },
+  "small_full": {
+    "rows": 1229,
+    "max_abs_probability_diff": 1.1102230246251565e-16,
+    "changed_predictions": 0
+  }
+}

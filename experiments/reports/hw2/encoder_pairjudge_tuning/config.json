@@ -1,0 +1,80 @@
+{
+  "models": {
+    "mbert": [
+      "google-bert/bert-base-multilingual-cased",
+      "3f076fdb1ab68d5b2880cb87a0886f315b8146f8"
+    ],
+    "roberta": [
+      "FacebookAI/roberta-large",
+      "722cf37b1afa9454edce342e7895e588b6ff1d59"
+    ],
+    "modern": [
+      "answerdotai/ModernBERT-large",
+      "45bb4654a4d5aaff24dd11d4781fa46d39bf8c13"
+    ],
+    "pair": [
+      "DaoyuanLi/pairjudge-qwen2.5-0.5b-v0.3",
+      "aa9dfb488147c45572921a3a93d00864dc1f526d"
+    ]
+  },
+  "seed": 42,
+  "physical_batch": {
+    "mbert": 16,
+    "roberta": 8,
+    "modern": 8,
+    "pair": 8
+  },
+  "effective_batch": 64,
+  "epochs_considered": {
+    "encoders": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "pair": [
+      1,
+      2
+    ]
+  },
+  "lora": {
+    "rank": 8,
+    "alpha": 16,
+    "modules": [
+      "q_proj",
+      "v_proj"
+    ],
+    "train_head": "score",
+    "lr": 0.0001
+  },
+  "encoder_limits": [
+    96,
+    206,
+    206
+  ],
+  "encoder_lr": 2e-05,
+  "weight_decay": 0.01,
+  "autocast": "bfloat16",
+  "deterministic_algorithms": true,
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "torch": "2.8.0+cu128",
+  "versions": {
+    "transformers": "4.57.6",
+    "tokenizers": "0.22.2",
+    "pairjudge": "0.3.0",
+    "peft": "0.18.0",
+    "accelerate": "1.12.0",
+    "networkx": "3.4.2",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2"
+  },
+  "cuda": "12.8",
+  "python": "3.12.3",
+  "input_hashes": {
+    "train.jsonl": "a24a5e790aacb0dc393d1dd0a205feb3e6145f6eff68077e5a5733e11dc6919d",
+    "valid.jsonl": "bde7e0fdce931cdbbd47adcb1ad0d9f14dc553e11e930c2be199919cc88abd32",
+    "judge_ids.csv": "d1a3c627ae4c3d86a07ae2a05afc90e34e5777f7f784cbde44a7ceb0aa20364d",
+    "train_groups.csv": "9d63fc9108410f8f8b40c141cbc43dce4b14d83f74150caf58dbec53b9d84c26"
+  },
+  "selection": "lowest inner dev log loss, earliest tie"
+}

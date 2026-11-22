@@ -1,0 +1,22 @@
+{
+  "run_id": "51c9c0b3a65a452e8dff99acc07cadc4",
+  "status": "FINISHED",
+  "artifacts": [
+    "curves.png",
+    "differences.csv",
+    "large_lora.csv",
+    "large_lora.json",
+    "large_lora_curve.csv",
+    "metrics.csv",
+    "panel.csv",
+    "protocol.md",
+    "small_full.csv",
+    "small_full.json",
+    "small_full_curve.csv",
+    "small_lora.csv",
+    "small_lora.json",
+    "small_lora_curve.csv",
+    "tfidf_incumbent.csv",
+    "tfidf_matched.csv"
+  ]
+}
