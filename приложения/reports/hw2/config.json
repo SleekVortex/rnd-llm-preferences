@@ -1,0 +1,49 @@
+{
+  "seed": 42,
+  "epochs": 1,
+  "lr": 2e-05,
+  "weight_decay": 0.01,
+  "limits": [
+    96,
+    206,
+    206
+  ],
+  "dtype": "bfloat16",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "models": {
+    "bert": [
+      "google-bert/bert-base-multilingual-cased",
+      "3f076fdb1ab68d5b2880cb87a0886f315b8146f8"
+    ],
+    "pair": [
+      "DaoyuanLi/pairjudge-qwen2.5-0.5b-v0.3",
+      "aa9dfb488147c45572921a3a93d00864dc1f526d"
+    ],
+    "arena": [
+      "dheepakkaran/arenajudge-qwen2.5-1.5b-lora-onnx-w4",
+      "afc6132b9d6b3d050d1fab2b6f0372a9996cfa78"
+    ],
+    "panda": [
+      "WeOpenML/PandaLM-7B-v1",
+      "f7e28bda625e6e72b4638165ef9964a35a12a4fc"
+    ]
+  },
+  "torch": "2.8.0+cu128",
+  "batch_size": 64,
+  "packages": {
+    "transformers": "4.57.6",
+    "tokenizers": "0.22.2",
+    "pairjudge": "0.3.0",
+    "onnxruntime": "1.23.2",
+    "sentencepiece": "0.2.1",
+    "pandas": "2.3.3"
+  },
+  "judge_rows": 512,
+  "bert_weight_in_mixture": 0.5,
+  "pair_swap_debias": false,
+  "panda_token_limits": [
+    256,
+    512,
+    512
+  ]
+}

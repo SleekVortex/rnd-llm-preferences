@@ -1,0 +1,154 @@
+{
+  "primary": "The first completed run supplies the registered H1 and H2 comparisons. Repeats were requested after seeing H1, used identical IDs and seed 42, and did not replace the original predictions.",
+  "labels_and_reference": {
+    "train_matched_labels_and_three_fields": 6795,
+    "valid_matched_labels_and_three_fields": 1799,
+    "matched_tfidf_max_probability_diff": 0.0,
+    "short_tfidf_max_probability_diff": 0.0,
+    "baseline_full_max_probability_diff": 0.0,
+    "same_judge_rows": 512,
+    "distinct_judge_components": 512
+  },
+  "tokenizer_match": {
+    "train_prompt": 6795,
+    "train_response_a": 6795,
+    "train_response_b": 6795,
+    "valid_prompt": 1799,
+    "valid_response_a": 1799,
+    "valid_response_b": 1799
+  },
+  "checkpoint_and_independent_training": {
+    "seed": 42,
+    "train_rows": 6795,
+    "valid_rows": 1799,
+    "steps": 107,
+    "tfidf": {
+      "log_loss": 1.0657896971178218,
+      "accuracy": 0.44080044469149526,
+      "rows": 1799
+    },
+    "original_predictions": {
+      "log_loss": 1.0854280314574505,
+      "accuracy": 0.3879933296275709,
+      "rows": 1799
+    },
+    "checkpoint_bf16": {
+      "log_loss": 1.0854280314574505,
+      "accuracy": 0.3879933296275709,
+      "rows": 1799
+    },
+    "checkpoint_fp32": {
+      "log_loss": 1.0854580332124923,
+      "accuracy": 0.3879933296275709,
+      "rows": 1799
+    },
+    "checkpoint_max_probability_diff": 8.326672684688674e-17,
+    "checkpoint_changed_classes": 0,
+    "checkpoint_train": {
+      "log_loss": 1.0727728733706792,
+      "accuracy": 0.4063281824871229,
+      "rows": 6795
+    },
+    "median_packed_train_tokens": 180.0,
+    "median_packed_valid_tokens": 177.0,
+    "retrained_same_seed": {
+      "log_loss": 1.0780135177771164,
+      "accuracy": 0.41356309060589214,
+      "rows": 1799
+    },
+    "retrained_max_probability_diff": 0.24705572782317964,
+    "retrained_changed_classes": 638
+  },
+  "repeat_notebook_cells": {
+    "same_cell_source_sha256": "1903953750774ba78cfa8c1413fb31aabce501d1b7e888e1ba1239438c8c0791",
+    "repeated_batch": 64,
+    "rows": 1799,
+    "steps": 107,
+    "original_log_loss": 1.0854280314574505,
+    "repeat_log_loss": 1.0797068232767477,
+    "repeat_accuracy": 0.40967204002223456,
+    "max_probability_diff": 0.15663960283148626,
+    "changed_predictions": 287,
+    "cuda_deterministic_algorithms": false,
+    "cudnn_deterministic": false,
+    "sdpa_implementation": "sdpa"
+  },
+  "deterministic_settings": {
+    "host": "NVIDIA H100 80GB HBM3",
+    "torch": "2.8.0+cu128",
+    "seed": 42,
+    "batch_size": 64,
+    "epochs": 1,
+    "PYTHONHASHSEED": "42",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "HF_ENABLE_PARALLEL_LOADING": "false",
+    "RAYON_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "TOKENIZERS_PARALLELISM": "false",
+    "torch.use_deterministic_algorithms": true,
+    "torch.backends.cudnn.deterministic": true,
+    "torch.backends.cudnn.benchmark": false,
+    "torch.backends.cuda.enabled_sdp_backends": [
+      "math"
+    ],
+    "torch.set_num_threads": 1,
+    "input": "same BERT checkpoint, notebook gpu_data, gpu_tokens, gpu_helpers, gpu_train and gpu_save with original batch 64, separate Python process per run"
+  },
+  "deterministic_repeats": [
+    {
+      "label": "first",
+      "rows": 1799,
+      "log_loss": 1.0911841269472982,
+      "accuracy": 0.41745414118954977,
+      "predictions_sha256": "998979dd6a0440dd1231e1968a6867d9814aeb480150d2121804e5dc3e272a62",
+      "batch": 64,
+      "seed": 42,
+      "epochs": 1
+    },
+    {
+      "label": "second",
+      "rows": 1799,
+      "log_loss": 1.0911841269472982,
+      "accuracy": 0.41745414118954977,
+      "predictions_sha256": "998979dd6a0440dd1231e1968a6867d9814aeb480150d2121804e5dc3e272a62",
+      "batch": 64,
+      "seed": 42,
+      "epochs": 1
+    }
+  ],
+  "primary_class_counts": {
+    "class_order": [
+      "A",
+      "B",
+      "tie"
+    ],
+    "annotated": [
+      579,
+      552,
+      668
+    ],
+    "predicted": [
+      834,
+      167,
+      798
+    ],
+    "confusion_true_by_predicted": [
+      [
+        286,
+        63,
+        230
+      ],
+      [
+        274,
+        61,
+        217
+      ],
+      [
+        274,
+        43,
+        351
+      ]
+    ]
+  }
+}

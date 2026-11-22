@@ -1,0 +1,14 @@
+{
+  "model": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "mode": "small_lora",
+  "lr": 0.00015,
+  "epochs": 2,
+  "trainable_params": 3217408,
+  "train_rows": 5352,
+  "torch": "2.8.0+cu128",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "seed": 42,
+  "effective_batch": 64,
+  "micro_batch": 8
+}

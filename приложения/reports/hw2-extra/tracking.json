@@ -1,0 +1,26 @@
+{
+  "id": "42c8b5f7ccd04b818c70e2a5b6c85383",
+  "status": "FINISHED",
+  "artifacts": [
+    "config.json",
+    "curves.png",
+    "differences.csv",
+    "mbert_best.csv",
+    "mbert_curve.csv",
+    "mbert_first.csv",
+    "mbert_longer.csv",
+    "modern_best.csv",
+    "modern_curve.csv",
+    "pair_best.csv",
+    "pair_curve.csv",
+    "pair_frozen.csv",
+    "pair_native_best.csv",
+    "pair_native_frozen.csv",
+    "protocol.md",
+    "roberta_best.csv",
+    "roberta_curve.csv",
+    "scores.csv",
+    "train_groups.csv",
+    "vs_tfidf.csv"
+  ]
+}

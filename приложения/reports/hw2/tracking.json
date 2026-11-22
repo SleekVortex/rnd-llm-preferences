@@ -1,0 +1,26 @@
+{
+  "run_id": "f397f3f81274476b8a0877b15f308f9c",
+  "status": "FINISHED",
+  "metrics": 42,
+  "params": 18,
+  "artifacts": [
+    "batches.csv",
+    "comparison.png",
+    "config.json",
+    "differences.csv",
+    "errors.csv",
+    "judge_ids.csv",
+    "learning.csv",
+    "metrics.csv",
+    "predictions.csv.gz",
+    "protocol.md"
+  ],
+  "recheck": {
+    "run_id": "1a3a66b4d82a45318594e2746c493dbc",
+    "status": "FINISHED",
+    "metrics": 8,
+    "artifacts": [
+      "recheck.json"
+    ]
+  }
+}
