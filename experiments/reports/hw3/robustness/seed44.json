@@ -1,0 +1,13 @@
+{
+  "model": "Qwen/Qwen3-4B",
+  "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "mode": "large_lora",
+  "seed": 44,
+  "lr": 0.00015,
+  "epochs": 2,
+  "train_rows": 5352,
+  "test_rows": 1229,
+  "torch": "2.8.0+cu128",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "seconds": 342
+}
